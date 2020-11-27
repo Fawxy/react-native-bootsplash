@@ -32,7 +32,7 @@ module.exports = {
             "path to your static assets directory (useful to require the logo file in JS)",
         },
         {
-          name: "--background-image [path]",
+          name: "--background-path [path]",
           description: "path to your background image",
         },
       ],
