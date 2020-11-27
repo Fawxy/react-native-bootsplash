@@ -252,7 +252,7 @@ export const generate = async ({
       "--background-color value is not a valid hexadecimal color.",
     );
   }
-  let backgroundImage;
+  let backgroundImage: any;
   let darkBackgroundColorHex;
 
   const logoImage = await jimp.read(logoPath);

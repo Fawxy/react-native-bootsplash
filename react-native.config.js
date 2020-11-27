@@ -44,7 +44,7 @@ module.exports = {
           darkBackgroundColor,
           logoWidth,
           assetsPath,
-          backgroundImage,
+          backgroundPath,
         },
       ) => {
         const workingDirectory =
