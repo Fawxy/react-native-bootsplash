@@ -14,6 +14,12 @@ module.exports = {
           default: "#fff",
         },
         {
+          name: "--dark-background-color <color>",
+          description:
+            "color used as launch screen background (in hexadecimal format)",
+          default: "#000",
+        },
+        {
           name: "--logo-width <width>",
           description:
             "logo width at @1x (in dp - we recommand approximately ~100)",
@@ -25,11 +31,21 @@ module.exports = {
           description:
             "path to your static assets directory (useful to require the logo file in JS)",
         },
+        {
+          name: "--background-image [path]",
+          description: "path to your background image",
+        },
       ],
       func: (
         [logoPath],
         { project: { android, ios } },
-        { backgroundColor, logoWidth, assetsPath },
+        {
+          backgroundColor,
+          darkBackgroundColor,
+          logoWidth,
+          assetsPath,
+          backgroundImage,
+        },
       ) => {
         const workingDirectory =
           process.env.INIT_CWD || process.env.PWD || process.cwd();
@@ -45,6 +61,10 @@ module.exports = {
           assetsPath: assetsPath
             ? path.resolve(workingDirectory, assetsPath)
             : undefined,
+          backgroundPath: backgroundPath
+            ? path.resolve(workingDirectory, backgroundPath)
+            : undefined,
+          darkBackgroundColor,
         }).catch((error) => {
           console.error(error);
         });
