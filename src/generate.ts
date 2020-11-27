@@ -597,7 +597,7 @@ export const generate = async ({
 
       const colorSetPath = path.resolve(
         imagesPath,
-        xccolourassetName + ".imageset",
+        xccolourassetName + ".colorset",
       );
       fs.ensureDirSync(colorSetPath);
 
